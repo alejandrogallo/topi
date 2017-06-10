@@ -2,6 +2,8 @@
 
 thickness_1 = 5;
 
+main_body_thickness = 40;
+
 basis_width = 331;
 basis_depth = 225;
 basis_height = thickness_1;

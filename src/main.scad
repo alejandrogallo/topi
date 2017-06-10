@@ -1,4 +1,5 @@
 use <basis.scad>;
+use <top.scad>;
 use <rpi.scad>;
 use <sides.scad>;
 
@@ -8,4 +9,5 @@ RaspberryPi();
 %RightSide();
 BackSide();
 FrontSide();
+Top();
 
