@@ -2,6 +2,7 @@ use <basis.scad>;
 use <top.scad>;
 use <rpi.scad>;
 use <sides.scad>;
+use <keyboard.scad>;
 
 %Basis();
 RaspberryPi();
@@ -10,4 +11,5 @@ RaspberryPi();
 BackSide();
 FrontSide();
 Top();
+ThinkpadUSB();
 
