@@ -19,3 +19,4 @@ clean:
 		$(wildcard $(patsubst %.scad,%.stl,$(SOURCES)))
 		$(wildcard $(patsubst %.scad,%.off,$(SOURCES)))
 		$(wildcard $(patsubst %.scad,%.dxf,$(SOURCES)))
+		$(wildcard $(patsubst %.scad,%.deps,$(SOURCES)))
