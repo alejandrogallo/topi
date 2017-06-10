@@ -17,3 +17,5 @@ clean:
 	rm \
 		$(wildcard $(patsubst %.scad,%.png,$(SOURCES))) \
 		$(wildcard $(patsubst %.scad,%.stl,$(SOURCES)))
+		$(wildcard $(patsubst %.scad,%.off,$(SOURCES)))
+		$(wildcard $(patsubst %.scad,%.dxf,$(SOURCES)))
