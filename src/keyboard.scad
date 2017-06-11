@@ -2,6 +2,7 @@ include <constants.scad>;
 
 module ThinkpadUSB() {
   // src: https://support.lenovo.com/de/en/solutions/pd026745
+  echo("Drawing ThinkpadUSB");
   keyboard_length = 305.5;
   keyboard_width = 164;
   keyboard_height = 13.5;

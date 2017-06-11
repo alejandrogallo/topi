@@ -9,17 +9,21 @@ module PrimitiveBackFrontSide(args) {
 }
 
 module LeftSide() {
+  echo("Drawing left side");
   PrimitiveLeftRightSide();
 }
 
 module RightSide() {
+  echo("Drawing right side");
   PrimitiveLeftRightSide();
 }
 
 module BackSide() {
+  echo("Drawing back side");
   PrimitiveBackFrontSide();
 }
 
 module FrontSide() {
+  echo("Drawing front side");
   PrimitiveBackFrontSide();
 }
