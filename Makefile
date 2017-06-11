@@ -51,6 +51,9 @@ clean:
 		$(wildcard stl) \
 		$(wildcard $(STL_FILES)) \
 		$(patsubst %.scad,%.png,$(SOURCES)) \
+		$(patsubst %.scad,%.amf,$(SOURCES)) \
+		$(patsubst %.scad,%.csg,$(SOURCES)) \
+		$(patsubst %.scad,%.dxf,$(SOURCES)) \
 		$(patsubst %.scad,%.stl,$(SOURCES)) \
 		$(patsubst %.scad,%.deps,$(SOURCES)) \
 		$(wildcard $(PNG_FILES)) \
