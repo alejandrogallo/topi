@@ -13,6 +13,12 @@ stl: $(patsubst %.scad,%.stl,$(MAIN)) ## Create stl file
 %.png %.stl %.off %.dxf: %.scad
 	$(OPENSCAD) -m make -d $*.deps -o $@ $<
 
+%.eps: %.svg
+	inkscape -E $@ $<
+
+%.dxf: %.eps
+	pstoedit -dt -f dxf:-polyaslines\ -mm $< $@
+
 clean:
 	rm \
 		$(wildcard $(patsubst %.scad,%.png,$(SOURCES))) \
