@@ -50,6 +50,7 @@ clean:
 		$(wildcard $(STL_FILES)) \
 		$(patsubst %.scad,%.png,$(SOURCES)) \
 		$(patsubst %.scad,%.stl,$(SOURCES)) \
+		$(patsubst %.scad,%.deps,$(SOURCES)) \
 		$(wildcard $(PNG_FILES)) \
 		$(wildcard png)
 

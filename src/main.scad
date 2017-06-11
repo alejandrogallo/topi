@@ -1,7 +1,10 @@
 use <basis.scad>;
 use <top.scad>;
 use <rpi.scad>;
-use <sides.scad>;
+use <sides/back.scad>;
+use <sides/front.scad>;
+use <sides/left.scad>;
+use <sides/right.scad>;
 use <keyboard.scad>;
 include <constants.scad>;
 
