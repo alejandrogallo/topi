@@ -8,11 +8,17 @@ STL_DIR=stl
 SRC_DIR=src
 PNG_DIR=png
 
+PNG_FILES = \
+$(patsubst %.scad,$(PNG_DIR)/%.png,$(patsubst $(SRC_DIR)/%,%,$(SOURCES))) ## create png file
+
+STL_FILES = \
+$(patsubst %.scad,$(STL_DIR)/%.stl,$(patsubst $(SRC_DIR)/%,%,$(SOURCES))) ## Create stl file
+
 watch:
 	($(OPENSCAD) $(MAIN) &)&
 
-png: $(patsubst %.scad,$(PNG_DIR)/%.png,$(patsubst $(SRC_DIR)/%,%,$(SOURCES))) ## create png file
-stl: $(patsubst %.scad,$(STL_DIR)/%.stl,$(patsubst $(SRC_DIR)/%,%,$(SOURCES))) ## Create stl file
+png: $(PNG_FILES) ## create png file
+stl: $(STL_FILES) ## Create stl file
 
 $(STL_DIR)/%.stl: $(SRC_DIR)/%.stl
 	@mkdir -p $(dir $@)
@@ -41,6 +47,10 @@ $(PNG_DIR)/%.png: $(SRC_DIR)/%.png
 clean:
 	rm -rf \
 		$(wildcard stl) \
+		$(wildcard $(STL_FILES)) \
+		$(patsubst %.scad,%.png,$(SOURCES)) \
+		$(patsubst %.scad,%.stl,$(SOURCES)) \
+		$(wildcard $(PNG_FILES)) \
 		$(wildcard png)
 
 help: ## Prints help for targets with comments
