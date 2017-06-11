@@ -20,5 +20,8 @@ translate([-thickness_1, -thickness_1, 0])
 translate([0, 0, main_body_thickness])
   translate([-thickness_1, -thickness_1, 0])
   Top();
-ThinkpadUSB();
+
+translate([0.5 * (basis_width - keyboard_length), 0, 0])
+  translate([0, 0, main_body_thickness])
+  ThinkpadUSB();
 
