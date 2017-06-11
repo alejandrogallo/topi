@@ -9,22 +9,17 @@ module PrimitiveBackFrontSide(args) {
 }
 
 module LeftSide() {
-  translate([-thickness_1, 0, 0])
-    PrimitiveLeftRightSide();
+  PrimitiveLeftRightSide();
 }
 
 module RightSide() {
-  translate([basis_width, 0, 0])
-    PrimitiveLeftRightSide();
+  PrimitiveLeftRightSide();
 }
 
 module BackSide() {
-  translate([-thickness_1, -thickness_1, 0])
-    PrimitiveBackFrontSide();
+  PrimitiveBackFrontSide();
 }
 
 module FrontSide() {
-  translate([-thickness_1, -thickness_1, 0])
-    translate([0, basis_depth + thickness_1, 0])
-    PrimitiveBackFrontSide();
+  PrimitiveBackFrontSide();
 }

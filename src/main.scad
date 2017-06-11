@@ -3,13 +3,22 @@ use <top.scad>;
 use <rpi.scad>;
 use <sides.scad>;
 use <keyboard.scad>;
+include <constants.scad>;
 
-%Basis();
+Basis();
 RaspberryPi();
-%LeftSide();
-%RightSide();
-BackSide();
-FrontSide();
-Top();
+
+translate([-thickness_1, 0, 0])
+  LeftSide();
+translate([basis_width, 0, 0])
+  RightSide();
+translate([-thickness_1, -thickness_1, 0])
+  BackSide();
+translate([-thickness_1, -thickness_1, 0])
+  translate([0, basis_depth + thickness_1, 0])
+  FrontSide();
+translate([0, 0, main_body_thickness])
+  translate([-thickness_1, -thickness_1, 0])
+  Top();
 ThinkpadUSB();
 
