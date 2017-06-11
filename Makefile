@@ -3,6 +3,7 @@ include $(wildcard src/*.deps)
 SOURCES ?= $(wildcard src/*.scad)
 MAIN ?= src/main.scad
 OPENSCAD ?= openscad
+IMGSIZE=2000,2000
 
 watch:
 	($(OPENSCAD) $(MAIN) &)&
@@ -10,8 +11,11 @@ watch:
 png: $(patsubst %.scad,%.png,$(MAIN)) ## Create png image
 stl: $(patsubst %.scad,%.stl,$(MAIN)) ## Create stl file
 
-%.png %.stl %.off %.dxf: %.scad
+%.stl %.off %.dxf: %.scad
 	$(OPENSCAD) -m make -d $*.deps -o $@ $<
+
+%.png: %.scad
+	$(OPENSCAD) --imgsize=$(IMGSIZE) -m make -d $*.deps -o $@ $<
 
 %.eps: %.svg
 	inkscape -E $@ $<
