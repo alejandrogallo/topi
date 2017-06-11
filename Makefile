@@ -1,6 +1,8 @@
 include $(wildcard src/*.deps)
 
-SOURCES ?= $(wildcard src/*.scad)
+SOURCES ?= \
+$(wildcard src/*.scad) \
+$(wildcard src/**/*.scad)
 MAIN ?= src/main.scad
 OPENSCAD ?= openscad
 IMGSIZE=2000,2000

@@ -7,3 +7,5 @@ module RaspberryPi() {
   color("red")
     import("../lib/raspberry_pi_b_board/B+_Model_v4.stl");
 }
+
+RaspberryPi();

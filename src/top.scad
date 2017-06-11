@@ -5,3 +5,4 @@ module Top() {
   cube([basis_width + 2*thickness_1, basis_depth + 2*thickness_1, basis_height]);
 }
 
+Top();

@@ -15,3 +15,5 @@ module ThinkpadUSB() {
         cylinder(h=keyboard_height+1, r=4, center = [0, 0]);
     }
 }
+
+ThinkpadUSB();
